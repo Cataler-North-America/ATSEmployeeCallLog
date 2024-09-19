@@ -1001,8 +1001,9 @@ SELECT EmpID, LName, FName, MI, Active, FName + ' ' + MI + ' ' + LName AS FullNa
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO [tblEmpMaster] ([EmpID], [LName], [FName], [MI], [Active]) VALUES (@E" +
-                "mpID, @LName, @FName, @MI, 1)";
+            this._commandCollection[1].CommandText = "INSERT INTO tblEmpMaster\r\n                         (EmpID, LName, FName, MI, Acti" +
+                "ve, DefCostCtr, Position, ManagerName, Schedule, Shift)\r\nVALUES        (@EmpID,@" +
+                "LName,@FName,@MI, 1, \'ATS\', \'\', \'Maintenance\', \'\', \'\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmpID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EmpID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LName", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "LName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
